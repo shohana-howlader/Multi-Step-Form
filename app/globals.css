@@ -5,12 +5,20 @@
   --foreground: #171717;
 }
 
-@theme inline {
+.dark-mode {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --text-color: #0a0a0a;
+  --card-bg: #1e293b;
+  --card-border: #4b5563;
+}
+
+ @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} 
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,4 +31,83 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+/* Dark mode specific styles */
+.dark-mode .form-container {
+  background-color: #1e293b; /* Dark background */
+  color: #fff; /* Light text for dark mode */
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: #334155; /* Slightly lighter than background */
+  color: #fff; /* Light text */
+  border-color: #475569; /* Visible border */
+}
+
+.dark-mode label {
+  color: #e2e8f0; /* Light text for labels */
+}
+
+/* For the summary page in dark mode */
+.dark-mode .summary-content {
+  color: #fff;
+}
+
+.dark-mode .summary-label {
+  color: #94a3b8; /* Slightly muted light color for labels */
+}
+
+.dark-mode .summary-value {
+  color: #fff; /* Bright for values */
+}
+
+
+
+
+
+
+
+:root {
+  /* Light mode variables */
+  --text-color: #333;
+  --input-bg: #fff;
+  --input-text: #333;
+  --input-border: #ccc;
+}
+
+.dark-mode {
+  /* Dark mode variables */
+  --text-color: #fff;
+  --input-bg: #2c3e50; /* Darker background for inputs */
+  --input-text: #fff;  /* Light text for inputs */
+  --input-border: #4a6785;
+}
+
+/* General styles */
+label {
+  color: var(--text-color);
+  margin-bottom: 8px;
+  display: block;
+}
+
+input, textarea, select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Ensure placeholder text is visible in both modes */
+::placeholder {
+  color: var(--input-text);
+  opacity: 0.7;
 }
