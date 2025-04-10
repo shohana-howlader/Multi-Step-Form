@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Multi-Step Form with Validation
+
+A responsive multi-step form application built with Next.js, React Hook Form, Zod validation, and TailwindCSS. This application provides a clean and intuitive interface for collecting user information across multiple steps with proper validation.
+
+## Features
+
+- Multi-step form with progress indication
+- Form validation using Zod
+- Field-level error messages
+- Responsive design for mobile and desktop
+- Dark mode support
+- Summary view before final submission
+- Simulated API submission
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- React Hook Form for form handling
+- Zod for validation
+- TailwindCSS for styling
+- React Query for API simulation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/multi-step-form.git
+cd multi-step-form
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/
+├── app/                  # Next.js app directory
+│   ├── page.tsx          # Main form page
+│   ├── layout.tsx        # Root layout with theme provider
+│   └── globals.css       # Global styles
+├── components/           # React components
+│   ├── PersonalInfo.tsx  # Step 1 component
+│   ├── AddressDetails.tsx # Step 2 component
+│   ├── AccountSetup.tsx  # Step 3 component
+│   └── Summary.tsx       # Summary component
+├── context/              # React context
+│   └── ThemeContext.tsx  # Theme context for dark mode
+├── services/             # API services
+│   └── api.ts            # Form submission service
+└── README.md             # Project documentation
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Fill out the form across three steps:
+   - Personal Information (name, email, phone)
+   - Address Details (street address, city, zip code)
+   - Account Setup (username, password)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Review your information in the summary view before submission
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Submit the form (data will be logged to console)
 
-## Deploy on Vercel
+## Mobile Responsiveness
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The form adapts to different screen sizes, providing an optimal experience on both desktop and mobile devices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Dark Mode
+
+Toggle between light and dark mode using the button in the header. Your preference will be remembered between sessions.
