@@ -31,7 +31,7 @@ A responsive multi-step form application built with Next.js, React Hook Form, Zo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/multi-step-form.git
+git clone https://github.com/shohana-howlader/Multi-Step-Form.git
 cd multi-step-form
 ```
 
