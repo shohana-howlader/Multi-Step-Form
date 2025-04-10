@@ -237,16 +237,18 @@ interface SummaryProps {
 const Summary = ({ formData }: SummaryProps) => {
   const { theme } = useTheme();
   
+  // Add theme-conditional styling for the text elements
+  const textColor = theme === 'dark' ? 'text-black' : 'text-gray-900';
   const sectionClass = "mb-6";
-  const titleClass = "text-lg font-medium mb-2";
+  const titleClass = `text-lg font-medium mb-2 ${textColor}`; // Apply text color
   const itemClass = "grid grid-cols-3 mb-1";
-  const labelClass = "font-medium";
-  const valueClass = "";
+  const labelClass = `font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`; // Label styling
+  const valueClass = textColor; // Apply text color to values
 
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-4">Summary</h2>
-      <p className="mb-6">Please review your information before submitting:</p>
+    <div className={textColor}> {/* Apply text color to container */}
+      <h2 className={`text-xl font-semibold mb-4 ${textColor}`}>Summary</h2>
+      <p className={`mb-6 ${textColor}`}>Please review your information before submitting:</p>
 
       <div className={sectionClass}>
         <h3 className={titleClass}>Personal Information</h3>
